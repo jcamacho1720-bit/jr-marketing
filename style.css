@@ -305,7 +305,6 @@ nav{
   white-space:nowrap;
   z-index:5;
 }
-.badge-1{ background:var(--ink); color:#fff; left:6%; top:20%; }
 .badge-2{ background:var(--yellow); color:var(--ink); right:6%; top:24%; }
 
 @media (max-width: 900px){
