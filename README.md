@@ -8,4 +8,6 @@ Sitio web dinámico y moderno para **JR Marketing**. Este proyecto contiene un d
 *   **Vanilla JavaScript** (Intersection Observer y lógica de scroll personalizada)
 
 ## 📁 Estructura del Proyecto
-*   `jr-marketing-prototipo (2).html`: Prototipo interactivo principal.
+*   `index.html`: Archivo HTML principal de la página web.
+*   `style.css`: Archivo de estilos visuales, colores y animaciones.
+*   `app.js`: Lógica interactiva de animaciones de scroll, carrusel de logos y mapa.
