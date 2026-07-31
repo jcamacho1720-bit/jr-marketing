@@ -168,14 +168,14 @@ nav{
 
 .hero-text{
   position:absolute;
-  left:50%; top:9%;
+  left:50%; top:2%;
   width:100%; max-width:720px;
   text-align:center;
   padding:0 24px;
 }
 .hero-text h1{
   font-size:clamp(38px, 6.4vw, 82px);
-  margin-top:20px;
+  margin-top:0;
 }
 .hero-sub{
   max-width:460px;
@@ -185,7 +185,6 @@ nav{
   line-height:1.5;
   font-weight:500;
 }
-.hero-eyebrow{justify-content:center;}
 .hero-ctas{
   display:flex; gap:14px; justify-content:center; margin-top:34px; flex-wrap:wrap;
 }
