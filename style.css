@@ -152,6 +152,7 @@ nav{
 .scroll-story{
   position:relative;
   height:280vh;
+  padding:0;
 }
 .story-stage{
   position:sticky;
