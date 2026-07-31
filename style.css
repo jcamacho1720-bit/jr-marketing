@@ -189,11 +189,11 @@ nav{
 .somos-text{
   position:absolute;
   left:0; top:50%;
-  width:46%; min-width:280px; max-width:520px;
+  width:46%; min-width:280px; max-width:495px;
 }
 .somos-text .eyebrow{ margin-bottom:16px; }
 .somos-text h2{
-  font-size:clamp(24px, 3.2vw, 38px);
+  font-size:37px;
   font-weight:700;
 }
 .somos-text p.support{
