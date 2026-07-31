@@ -34,6 +34,12 @@ const heroRot = [-4, 2, -2, 5];
 const heroX = [-380, -130, 130, 380];
 const heroY = [90, 70, 95, 110];
 
+// Configuraciones finales para el collage en sección Somos
+const somosRot = [-5, 3, -2, 6];
+const somosX = [40, 180, 330, 470];
+const somosY = [-60, 50, -40, 110];
+const somosScale = [0.8, 0.75, 0.72, 0.72];
+
 function lerp(a, b, t) { return a + (b - a) * t; }
 
 let ticking = false;
@@ -65,11 +71,11 @@ function update() {
     const Brot = c * 2.4;
     const Bsc = 0.8;
 
-    // Estado C: se abren a la derecha
-    const Cx = isMobile ? c * 8 : rightOffset + c * 30;
-    const Cy = isMobile ? 80 + c * 5 : c * 38;
-    const Crot = c * 5;
-    const Csc = isMobile ? 0.42 : 0.65;
+    // Estado C: se abren a la derecha de forma asimétrica y esparcida
+    const Cx = isMobile ? c * 8 : somosX[i] * respFactor;
+    const Cy = isMobile ? 80 + c * 35 : somosY[i] * respFactor;
+    const Crot = isMobile ? c * 4 : somosRot[i];
+    const Csc = isMobile ? 0.42 : somosScale[i] * respFactor;
 
     let x, y, rot, sc;
     if (progress < 0.45) {
