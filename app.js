@@ -29,9 +29,10 @@ const somosText = document.getElementById('somosText');
 const N = cards.length;
 const mid = (N - 1) / 2;
 
-const heroRot = [-22, -13, -4, 4, 13, 22];
-const heroX = [-250, -152, -52, 52, 152, 250];
-const heroY = [16, -6, -14, -14, -6, 16];
+// Nuevas configuraciones para 4 tarjetas de fotos asimétricas
+const heroRot = [-4, 2, -2, 5];
+const heroX = [-380, -130, 130, 380];
+const heroY = [90, 70, 95, 110];
 
 function lerp(a, b, t) { return a + (b - a) * t; }
 
@@ -47,25 +48,42 @@ function update() {
 
   const stageWidth = stage.offsetWidth;
   const isMobile = stageWidth < 760;
-  const respFactor = isMobile ? 0.5 : 1;
-  const rightOffset = isMobile ? 0 : stageWidth * 0.27;
+  const respFactor = isMobile ? 0.45 : 1;
+  const rightOffset = isMobile ? 0 : stageWidth * 0.26;
 
   cards.forEach((card, i) => {
     const c = i - mid;
 
-    const Ax = heroX[i] * respFactor, Ay = heroY[i] * respFactor, Arot = heroRot[i], Asc = 1;
-    const Bx = c * 4, By = c * 3, Brot = c * 2.4, Bsc = 0.8;
-    const Cx = isMobile ? c * 10 : rightOffset + c * 26;
-    const Cy = isMobile ? 60 + c * 4 : c * 34;
-    const Crot = c * 4, Csc = isMobile ? 0.42 : 0.6;
+    const Ax = heroX[i] * respFactor;
+    const Ay = heroY[i] * respFactor;
+    const Arot = heroRot[i];
+    const Asc = 1;
+
+    // Estado B: se agrupan en el centro
+    const Bx = c * 4;
+    const By = c * 3;
+    const Brot = c * 2.4;
+    const Bsc = 0.8;
+
+    // Estado C: se abren a la derecha
+    const Cx = isMobile ? c * 8 : rightOffset + c * 30;
+    const Cy = isMobile ? 80 + c * 5 : c * 38;
+    const Crot = c * 5;
+    const Csc = isMobile ? 0.42 : 0.65;
 
     let x, y, rot, sc;
     if (progress < 0.45) {
       const t = progress / 0.45;
-      x = lerp(Ax, Bx, t); y = lerp(Ay, By, t); rot = lerp(Arot, Brot, t); sc = lerp(Asc, Bsc, t);
+      x = lerp(Ax, Bx, t);
+      y = lerp(Ay, By, t);
+      rot = lerp(Arot, Brot, t);
+      sc = lerp(Asc, Bsc, t);
     } else {
       const t = (progress - 0.45) / 0.55;
-      x = lerp(Bx, Cx, t); y = lerp(By, Cy, t); rot = lerp(Brot, Crot, t); sc = lerp(Bsc, Csc, t);
+      x = lerp(Bx, Cx, t);
+      y = lerp(By, Cy, t);
+      rot = lerp(Brot, Crot, t);
+      sc = lerp(Bsc, Csc, t);
     }
     card.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${sc})`;
   });
