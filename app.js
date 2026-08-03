@@ -290,48 +290,41 @@ function closeCaseModal() {
   document.body.classList.remove('modal-open');
 }
 
-// Add click event listeners via delegation
-document.addEventListener('click', function(e) {
-  // 1. Click on Case Card
-  const card = e.target.closest('.case-card');
-  if (card) {
+// ---- Attach click handlers directly to each case card ----
+document.querySelectorAll('.case-card[data-case]').forEach(function(card) {
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', function(e) {
+    // If it's the Ver Caso anchor, prevent default scroll-to-top
     e.preventDefault();
-    const caseId = card.getAttribute('data-case');
-    if (caseId) {
-      openCaseModal(caseId);
-    }
-    return;
-  }
+    openCaseModal(card.getAttribute('data-case'));
+  });
+});
 
-  // 2. Click on Close Button
-  if (e.target.closest('#modalCloseBtn')) {
-    e.preventDefault();
-    closeCaseModal();
-    return;
-  }
+// Close button
+document.getElementById('modalCloseBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  closeCaseModal();
+});
 
-  // 3. Click on Gallery Prev Button
-  if (e.target.closest('#galleryPrevBtn')) {
-    e.preventDefault();
-    showSlide(currentSlideIdx - 1);
-    return;
-  }
+// Prev / Next slide buttons
+document.getElementById('galleryPrevBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  showSlide(currentSlideIdx - 1);
+});
+document.getElementById('galleryNextBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  showSlide(currentSlideIdx + 1);
+});
 
-  // 4. Click on Gallery Next Button
-  if (e.target.closest('#galleryNextBtn')) {
-    e.preventDefault();
-    showSlide(currentSlideIdx + 1);
-    return;
-  }
-
-  // 5. Click on Backdrop (outside the modal box content)
+// Click on the dark backdrop (the modal overlay itself, not the content box)
+modal.addEventListener('click', function(e) {
   if (e.target === modal) {
     closeCaseModal();
   }
 });
 
-// ESC key to close modal
-document.addEventListener('keydown', (e) => {
+// ESC key
+document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape' && modal.classList.contains('active')) {
     closeCaseModal();
   }
