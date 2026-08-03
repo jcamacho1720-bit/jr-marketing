@@ -120,7 +120,7 @@ document.querySelectorAll('.service-card-container').forEach(card => {
   card.addEventListener('click', function(e) {
     if (window.innerWidth <= 820) {
       // If clicking the CTA or a link, don't toggle flip
-      if (e.target.closest('.back-cta') || e.target.closest('a')) {
+      if (e.target.closest('.back-cta-pill') || e.target.closest('a')) {
         return;
       }
       this.classList.toggle('flipped');
