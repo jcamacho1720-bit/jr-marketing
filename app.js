@@ -142,7 +142,7 @@ document.querySelectorAll('.service-card-container').forEach(card => {
 // ---- PORTFOLIO CASE STUDY DETAILS MODAL ----
 const caseStudiesData = {
   foro: {
-    category: "EXPERIENCIA / PRODUCCIÓN",
+    category: "FERIA / CONGRESO",
     title: "Foro Mundial de Datos",
     images: [
       "Foto de dato/FOTO TODOS FORO .jpg.jpeg",
@@ -153,23 +153,25 @@ const caseStudiesData = {
       "Foto de dato/_DSC1365.JPG.jpeg"
     ],
     brief: `
-      <h4>El Desafío</h4>
-      <p>Diseñar y producir de manera integral la infraestructura, escenografía y dinámicas de interacción para el evento sobre estadísticas y datos más prestigioso de América Latina, reuniendo a más de 1,500 delegados internacionales.</p>
+      <h4>Sobre el Proyecto</h4>
+      <p>Este evento de carácter internacional reunió a líderes gubernamentales, organizaciones multilaterales, empresas, academia y expertos de diferentes países para debatir el papel de los datos en la construcción de políticas públicas, el desarrollo sostenible y la innovación.</p>
       <hr>
-      <h4>Nuestra Estrategia</h4>
-      <p>Creamos un ecosistema espacial modular de bajo impacto ambiental utilizando materiales sostenibles. Diseñamos salones de conferencias híbridos con streaming en tiempo real y áreas de networking interactivo con pantallas dinámicas de visualización de datos.</p>
+      <h4>Nuestra Gestión</h4>
+      <p>Nuestra gestión abarcó la <strong>producción integral del evento</strong>, coordinando la experiencia de asistentes, conferencistas y aliados estratégicos, garantizando una ejecución impecable bajo estándares internacionales y consolidando un espacio de alto impacto para el intercambio de conocimiento y la cooperación global.</p>
       <hr>
-      <h4>Los Resultados</h4>
+      <h4>Escala del Evento</h4>
       <ul>
-        <li>Asistencia récord de representantes de más de 45 países.</li>
-        <li>100% de la producción escenográfica reciclada pos-evento.</li>
-        <li>Transmisión en vivo sin interrupciones con más de 20,000 espectadores únicos.</li>
+        <li>Evento de talla mundial para más de <strong>3.500 personas</strong>.</li>
+        <li>Más de <strong>100 nacionalidades</strong> presentes.</li>
+        <li>Líderes gubernamentales, multilaterales, empresas y academia.</li>
       </ul>
+      <hr>
+      <p><strong>📅 Fecha:</strong> 12 al 15 de noviembre de 2024</p>
     `
   },
   rueda: {
-    category: "CREATIVIDAD / ACTIVACIÓN",
-    title: "Rueda Electrica Fest",
+    category: "EVENTO / FESTIVAL",
+    title: "Rueda Eléctrica Fest",
     images: [
       "RUEDAFEST/1 (1).jpg.jpeg",
       "RUEDAFEST/DSC04016.jpg.jpeg",
@@ -178,22 +180,24 @@ const caseStudiesData = {
       "RUEDAFEST/DSC05032.jpg.jpeg"
     ],
     brief: `
-      <h4>El Desafío</h4>
-      <p>Crear y ejecutar el primer festival masivo al aire libre dedicado a la movilidad eléctrica y sostenible en Colombia, logrando captar el interés de marcas automotrices líderes y el público general.</p>
+      <h4>Sobre el Proyecto</h4>
+      <p>Desarrollamos el <strong>primer festival de movilidad eléctrica de Colombia</strong>, realizado en el Centro Comercial Unicentro. El evento reunió a más de 20 marcas líderes del sector en un espacio diseñado para impulsar la innovación, la sostenibilidad y la generación de oportunidades comerciales.</p>
       <hr>
-      <h4>Nuestra Estrategia</h4>
-      <p>Conceptualizamos un circuito interactivo de pruebas ("Test Drive") en el corazón del festival. Desarrollamos stands promocionales interactivos con tecnología de realidad aumentada y paneles de discusión académica dirigidos por líderes de opinión del sector.</p>
-      <hr>
-      <h4>Los Resultados</h4>
+      <h4>La Experiencia</h4>
+      <p>La experiencia integró:</p>
       <ul>
-        <li>Más de 5,000 asistentes activos durante el fin de semana.</li>
-        <li>Participación directa de 18 marcas automotrices y de micro-movilidad.</li>
-        <li>Más de 1,200 pruebas de vehículos eléctricos completadas en tiempo real.</li>
+        <li>Un <strong>showroom de exhibición y ventas</strong> con más de 20 marcas del sector.</li>
+        <li>Un <strong>videopodcast</strong> con invitados y expertos para generar contenido de valor.</li>
+        <li>Entretenimiento de alto impacto con <strong>5 artistas reconocidos</strong> de la escena musical.</li>
       </ul>
+      <hr>
+      <p>El festival logró atraer público masivo, fortalecer el posicionamiento de las marcas participantes y generar una experiencia memorable para los asistentes.</p>
+      <hr>
+      <p><strong>📅 Fecha:</strong> 7 al 10 de mayo de 2026</p>
     `
   },
   fiesta: {
-    category: "MARKETING EXPERIENCIAL",
+    category: "ACTIVACIÓN BTL",
     title: "Noches de Fiesta",
     images: [
       "Noche de fiesta/PHOTO-2026-03-14-15-31-00.jpg.jpeg",
@@ -203,18 +207,25 @@ const caseStudiesData = {
       "Noche de fiesta/PHOTO-2026-06-13-18-28-29.jpg.jpeg"
     ],
     brief: `
-      <h4>El Desafío</h4>
-      <p>Desarrollar una campaña experiencial nocturna y juvenil de alta recordación para posicionar marcas de bebidas premium en los principales centros urbanos del país.</p>
+      <h4>Sobre el Proyecto</h4>
+      <p>Aliados estratégicos de <strong>Jumbo Cencosud</strong> durante más de un año para el desarrollo de <em>"Noches de Fiesta"</em>, una de las campañas experienciales más representativas de la marca a nivel nacional.</p>
       <hr>
-      <h4>Nuestra Estrategia</h4>
-      <p>Creamos activaciones in-situ con cabinas fotográficas inmersivas, DJs en vivo, retos lúdicos digitales y recompensas personalizadas en barras luminosas LED de alta interacción.</p>
-      <hr>
-      <h4>Los Resultados</h4>
+      <h4>La Experiencia</h4>
+      <p>Diseñamos y operamos una <strong>experiencia inmersiva</strong> que convierte cada tienda en un escenario de celebración, combinando:</p>
       <ul>
-        <li>Activaciones exitosas en más de 24 clubes de 4 ciudades principales.</li>
-        <li>Incremento del 32% en ventas directas de producto durante las noches del tour.</li>
-        <li>Alcance orgánico en redes sociales superior a las 150,000 interacciones mensuales.</li>
+        <li>Música en vivo con DJ y producción técnica de sonido e iluminación.</li>
+        <li>Dinámicas de participación y entrega de premios.</li>
+        <li>Incentivos de interacción para aumentar el tráfico en tienda.</li>
       </ul>
+      <hr>
+      <h4>Escala Nacional</h4>
+      <ul>
+        <li><strong>26 puntos de venta</strong> en más de <strong>13 ciudades</strong> del país.</li>
+        <li>Activaciones con altos estándares de calidad y consistencia operativa.</li>
+        <li>Conexión emocional profunda entre Jumbo y sus clientes.</li>
+      </ul>
+      <hr>
+      <p><strong>📅 Fecha:</strong> 2025 / 2026</p>
     `
   }
 };
