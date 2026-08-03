@@ -1,12 +1,23 @@
-// trusted logos marquee
+// trusted logos marquee (separating 15 logos from a 5x3 SVG grid sheet)
 const track = document.getElementById('marqueeTrack');
-for (let i = 0; i < 4; i++) {
-  const img = document.createElement('img');
-  img.src = 'assets/jr_logos_web.svg';
-  img.alt = 'Logos Aliados JR Marketing';
-  img.className = 'brand-logo-item';
-  track.appendChild(img);
+const cols = 5;
+const rows = 3;
+const logoItems = [];
+
+// Generate the 15 individualized logo divs
+for (let r = 0; r < rows; r++) {
+  for (let c = 0; c < cols; c++) {
+    const el = document.createElement('div');
+    el.className = 'brand-logo-item';
+    el.style.backgroundPosition = `${c * 25}% ${r * 50}%`;
+    logoItems.push(el);
+  }
 }
+
+// Duplicate the set to allow a seamless loop scroll in the marquee
+[...logoItems, ...logoItems].forEach(item => {
+  track.appendChild(item.cloneNode(true));
+});
 
 // scroll reveal for regular sections
 const io = new IntersectionObserver((entries) => {

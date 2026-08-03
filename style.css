@@ -663,11 +663,15 @@ section{ padding:110px 0; }
   to{ transform:translateX(-50%); }
 }
 .brand-logo-item {
+  width: 120px;
   height: 48px;
-  width: auto;
+  background-image: url('assets/jr_logos_web.svg');
+  background-size: 500% 300%;
+  background-repeat: no-repeat;
   opacity: 0.55;
   filter: grayscale(1) brightness(0.25);
   transition: opacity 0.3s ease, filter 0.3s ease;
+  flex-shrink: 0;
 }
 .brand-logo-item:hover {
   opacity: 0.95;
@@ -760,47 +764,49 @@ section{ padding:110px 0; }
   margin-top: 4px;
   white-space: nowrap;
 }
-.map-pulse-overlay {
+.map-bg-glow {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  background: radial-gradient(circle, rgba(139, 47, 224, 0.3) 0%, rgba(255, 62, 157, 0.25) 45%, rgba(255, 122, 61, 0) 70%);
+  filter: blur(44px);
+  z-index: 1;
+  animation: map-glow-pulse 8s ease-in-out infinite alternate;
 }
-.pulse-dot {
-  position: absolute;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: auto;
-}
-.pulse-dot::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  border-radius: 50%;
-  background: currentColor;
-  opacity: 0.95;
-  box-shadow: 0 0 10px currentColor;
-}
-.pulse-dot::after {
-  content: "";
-  position: absolute;
-  top: -5px; left: -5px; width: calc(100% + 10px); height: calc(100% + 10px);
-  border-radius: 50%;
-  border: 1.5px solid currentColor;
-  opacity: 0;
-  animation: map-ping 2s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
-}
-@keyframes map-ping {
-  0% { transform: scale(0.6); opacity: 0.9; }
-  100% { transform: scale(2.4); opacity: 0; }
+@keyframes map-glow-pulse {
+  0% {
+    transform: scale(0.9) translate(-5px, -5px);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.1) translate(5px, 5px);
+    opacity: 1;
+    background: radial-gradient(circle, rgba(255, 62, 157, 0.3) 0%, rgba(139, 47, 224, 0.25) 45%, rgba(255, 122, 61, 0) 70%);
+  }
+  100% {
+    transform: scale(0.95) translate(-3px, 2px);
+    opacity: 0.8;
+  }
 }
 .map-svg-wrap {
   display: flex;
   justify-content: center;
+  position: relative;
+}
+.map-svg-wrap img {
+  animation: map-float 6s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+@keyframes map-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 @media (max-width:900px){
   .map-grid {
