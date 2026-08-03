@@ -128,12 +128,35 @@ h2 {
 .btn-primary {
   background: var(--ink);
   color: var(--white);
+  border: 1.5px solid transparent;
+  background-image: linear-gradient(var(--ink), var(--ink)), var(--gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: pulse-btn-border 1.6s infinite ease-in-out;
 }
 
 .btn-primary:hover {
-  background: var(--pink);
-  border-color: var(--pink);
+  animation: none;
+  background: var(--gradient);
+  color: var(--white);
+  border-color: transparent;
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 62, 157, 0.45);
+}
+
+.btn-primary:active {
+  animation: none;
+}
+
+@keyframes pulse-btn-border {
+  0%, 100% {
+    box-shadow: 0 0 0 0px rgba(255, 62, 157, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 14px 4px rgba(255, 62, 157, 0.7);
+    transform: scale(1.025);
+  }
 }
 
 .btn-ghost {
@@ -323,7 +346,7 @@ nav {
   margin-top: 20px;
   font-size: 16.5px;
   line-height: 1.6;
-  color: var(--ink-soft);
+  color: #000000;
   font-weight: 500;
 }
 
