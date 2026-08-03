@@ -183,12 +183,22 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
   height: var(--nav-h);
   display: flex;
   align-items: center;
+}
+
+/* Blur glass effect on pseudo-element so header doesn't create a
+   stacking context — this lets mix-blend-mode work on child elements */
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  z-index: -1;
 }
 
 nav {
