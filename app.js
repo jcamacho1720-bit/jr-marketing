@@ -290,18 +290,15 @@ function closeCaseModal() {
   document.body.classList.remove('modal-open');
 }
 
-// Add event listeners to case card cta buttons
+// Add click event listeners to the entire case card
 document.querySelectorAll('.case-card').forEach(card => {
-  const ctaBtn = card.querySelector('.case-cta-btn');
-  if (ctaBtn) {
-    ctaBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const caseId = card.getAttribute('data-case');
-      if (caseId) {
-        openCaseModal(caseId);
-      }
-    });
-  }
+  card.addEventListener('click', function(e) {
+    e.preventDefault();
+    const caseId = this.getAttribute('data-case');
+    if (caseId) {
+      openCaseModal(caseId);
+    }
+  });
 });
 
 // Close button click
