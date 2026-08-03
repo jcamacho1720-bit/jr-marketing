@@ -662,9 +662,16 @@ section{ padding:110px 0; }
   from{ transform:translateX(0); }
   to{ transform:translateX(-50%); }
 }
-.brandmark{
-  font-weight:700; font-size:22px;
-  color:var(--ink-soft); opacity:0.55; white-space:nowrap; letter-spacing:-0.01em;
+.brand-logo-item {
+  height: 48px;
+  width: auto;
+  opacity: 0.55;
+  filter: grayscale(1) brightness(0.25);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+.brand-logo-item:hover {
+  opacity: 0.95;
+  filter: grayscale(0) brightness(1);
 }
 
 /* BANNER */
@@ -753,37 +760,43 @@ section{ padding:110px 0; }
   margin-top: 4px;
   white-space: nowrap;
 }
-.map-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 12.5px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  color: var(--ink);
-  width: fit-content;
-  text-transform: uppercase;
-  transition: color 0.25s ease;
+.map-pulse-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
-.map-cta-btn:hover {
-  color: var(--pink);
-}
-.map-cta-btn .arrow-circle {
-  width: 34px;
-  height: 34px;
+.pulse-dot {
+  position: absolute;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
-  border: 1.5px solid var(--purple);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: var(--purple);
-  transition: all 0.25s ease;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
 }
-.map-cta-btn:hover .arrow-circle {
-  background: var(--purple);
-  color: var(--white);
-  transform: translateX(4px);
+.pulse-dot::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.95;
+  box-shadow: 0 0 10px currentColor;
+}
+.pulse-dot::after {
+  content: "";
+  position: absolute;
+  top: -5px; left: -5px; width: calc(100% + 10px); height: calc(100% + 10px);
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  opacity: 0;
+  animation: map-ping 2s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+}
+@keyframes map-ping {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.4); opacity: 0; }
 }
 .map-svg-wrap {
   display: flex;

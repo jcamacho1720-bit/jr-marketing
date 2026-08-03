@@ -1,12 +1,12 @@
-// trusted logos placeholders (duplicated for seamless marquee)
-const brands = ["NORTE°", "ORBITA CO", "MUNDIAL", "ALTO RELIEVE", "TERRAL", "VÍA LIBRE", "CASETA", "PUNTO CIEGO"];
+// trusted logos marquee
 const track = document.getElementById('marqueeTrack');
-[...brands, ...brands].forEach(b => {
-  const el = document.createElement('div');
-  el.className = 'brandmark';
-  el.textContent = b;
-  track.appendChild(el);
-});
+for (let i = 0; i < 4; i++) {
+  const img = document.createElement('img');
+  img.src = 'assets/jr_logos_web.svg';
+  img.alt = 'Logos Aliados JR Marketing';
+  img.className = 'brand-logo-item';
+  track.appendChild(img);
+}
 
 // scroll reveal for regular sections
 const io = new IntersectionObserver((entries) => {
