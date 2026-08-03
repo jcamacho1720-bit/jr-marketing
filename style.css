@@ -210,6 +210,20 @@ nav {
   letter-spacing: -0.01em;
 }
 
+/* Logo image (real file) */
+.logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Footer version — invert negro→blanco sobre fondo oscuro */
+.logo-img-white {
+  filter: invert(1) brightness(2);
+  height: 40px;
+}
+
 .logo .dot-play {
   width: 26px;
   height: 26px;
