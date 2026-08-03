@@ -210,20 +210,22 @@ nav {
   letter-spacing: -0.01em;
 }
 
-/* Logo image (real file) */
+/* Logo image (real file) — mix-blend-mode makes embedded white bg invisible */
 .logo-img {
   height: 28px;
   width: auto;
   display: block;
   object-fit: contain;
   background: transparent;
+  mix-blend-mode: multiply;
 }
 
-/* Footer version — invert negro→blanco sobre fondo oscuro */
+/* Footer version — inverted to white, screen mode removes dark bg on dark surface */
 .logo-img-white {
   filter: invert(1) brightness(2);
   height: 24px;
   background: transparent;
+  mix-blend-mode: screen;
 }
 
 /* Ensure logo containers have no background */
