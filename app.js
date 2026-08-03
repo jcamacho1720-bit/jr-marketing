@@ -138,3 +138,190 @@ document.querySelectorAll('.service-card-container').forEach(card => {
     }
   });
 });
+
+// ---- PORTFOLIO CASE STUDY DETAILS MODAL ----
+const caseStudiesData = {
+  foro: {
+    category: "EXPERIENCIA / PRODUCCIÓN",
+    title: "Foro Mundial de Datos",
+    images: [
+      "assets/evento-refest.png",
+      "assets/stand-promocional.png",
+      "assets/equipo-somos.png"
+    ],
+    brief: `
+      <h4>El Desafío</h4>
+      <p>Diseñar y producir de manera integral la infraestructura, escenografía y dinámicas de interacción para el evento sobre estadísticas y datos más prestigioso de América Latina, reuniendo a más de 1,500 delegados internacionales.</p>
+      <hr>
+      <h4>Nuestra Estrategia</h4>
+      <p>Creamos un ecosistema espacial modular de bajo impacto ambiental utilizando materiales sostenibles. Diseñamos salones de conferencias híbridos con streaming en tiempo real y áreas de networking interactivo con pantallas dinámicas de visualización de datos.</p>
+      <hr>
+      <h4>Los Resultados</h4>
+      <ul>
+        <li>Asistencia récord de representantes de más de 45 países.</li>
+        <li>100% de la producción escenográfica reciclada pos-evento.</li>
+        <li>Transmisión en vivo sin interrupciones con más de 20,000 espectadores únicos.</li>
+      </ul>
+    `
+  },
+  rueda: {
+    category: "CREATIVIDAD / ACTIVACIÓN",
+    title: "Rueda Electrica Fest",
+    images: [
+      "assets/stand-promocional.png",
+      "assets/evento-refest.png",
+      "assets/equipo-somos.png"
+    ],
+    brief: `
+      <h4>El Desafío</h4>
+      <p>Crear y ejecutar el primer festival masivo al aire libre dedicado a la movilidad eléctrica y sostenible en Colombia, logrando captar el interés de marcas automotrices líderes y el público general.</p>
+      <hr>
+      <h4>Nuestra Estrategia</h4>
+      <p>Conceptualizamos un circuito interactivo de pruebas ("Test Drive") en el corazón del festival. Desarrollamos stands promocionales interactivos con tecnología de realidad aumentada y paneles de discusión académica dirigidos por líderes de opinión del sector.</p>
+      <hr>
+      <h4>Los Resultados</h4>
+      <ul>
+        <li>Más de 5,000 asistentes activos durante el fin de semana.</li>
+        <li>Participación directa de 18 marcas automotrices y de micro-movilidad.</li>
+        <li>Más de 1,200 pruebas de vehículos eléctricos completadas en tiempo real.</li>
+      </ul>
+    `
+  },
+  fiesta: {
+    category: "MARKETING EXPERIENCIAL",
+    title: "Noches de Fiesta",
+    images: [
+      "assets/noches_de_fiesta_case.png",
+      "assets/evento-refest.png",
+      "assets/stand-promocional.png"
+    ],
+    brief: `
+      <h4>El Desafío</h4>
+      <p>Desarrollar una campaña experiencial nocturna y juvenil de alta recordación para posicionar marcas de bebidas premium en los principales centros urbanos del país.</p>
+      <hr>
+      <h4>Nuestra Estrategia</h4>
+      <p>Creamos activaciones in-situ con cabinas fotográficas inmersivas, DJs en vivo, retos lúdicos digitales y recompensas personalizadas en barras luminosas LED de alta interacción.</p>
+      <hr>
+      <h4>Los Resultados</h4>
+      <ul>
+        <li>Activaciones exitosas en más de 24 clubes de 4 ciudades principales.</li>
+        <li>Incremento del 32% en ventas directas de producto durante las noches del tour.</li>
+        <li>Alcance orgánico en redes sociales superior a las 150,000 interacciones mensuales.</li>
+      </ul>
+    `
+  }
+};
+
+// Modal state elements
+const modal = document.getElementById('caseModal');
+const modalSlider = document.getElementById('modalSlider');
+const modalCloseBtn = document.getElementById('modalCloseBtn');
+const galleryPrevBtn = document.getElementById('galleryPrevBtn');
+const galleryNextBtn = document.getElementById('galleryNextBtn');
+const galleryDotsContainer = document.getElementById('galleryDots');
+const briefCategory = document.getElementById('briefCategory');
+const briefTitle = document.getElementById('briefTitle');
+const briefBody = document.getElementById('briefBody');
+
+let currentSlideIdx = 0;
+let totalSlides = 0;
+
+// Update the slider position and active dots
+function showSlide(index) {
+  if (totalSlides === 0) return;
+  currentSlideIdx = (index + totalSlides) % totalSlides;
+  modalSlider.style.transform = `translateX(-${currentSlideIdx * 100}%)`;
+  
+  // Update active dot
+  const dots = galleryDotsContainer.querySelectorAll('.gallery-dot');
+  dots.forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === currentSlideIdx);
+  });
+}
+
+// Open modal function
+function openCaseModal(caseId) {
+  const data = caseStudiesData[caseId];
+  if (!data) return;
+
+  // Set text contents
+  briefCategory.textContent = data.category;
+  briefTitle.textContent = data.title;
+  briefBody.innerHTML = data.brief;
+
+  // Clear previous gallery contents
+  modalSlider.innerHTML = '';
+  galleryDotsContainer.innerHTML = '';
+
+  // Load new images and build slide elements
+  totalSlides = data.images.length;
+  currentSlideIdx = 0;
+
+  data.images.forEach((imgSrc, idx) => {
+    // Build slide div
+    const slide = document.createElement('div');
+    slide.className = 'gallery-slide';
+    
+    const img = document.createElement('img');
+    img.src = imgSrc;
+    img.alt = `${data.title} Slide ${idx + 1}`;
+    slide.appendChild(img);
+    modalSlider.appendChild(slide);
+
+    // Build indicator dot
+    const dot = document.createElement('button');
+    dot.className = `gallery-dot ${idx === 0 ? 'active' : ''}`;
+    dot.ariaLabel = `Ir a foto ${idx + 1}`;
+    dot.addEventListener('click', () => showSlide(idx));
+    galleryDotsContainer.appendChild(dot);
+  });
+
+  // Reset transform position
+  modalSlider.style.transform = 'translateX(0)';
+
+  // Display modal
+  modal.classList.add('active');
+  document.body.classList.add('modal-open');
+}
+
+// Close modal function
+function closeCaseModal() {
+  modal.classList.remove('active');
+  document.body.classList.remove('modal-open');
+}
+
+// Add event listeners to case card cta buttons
+document.querySelectorAll('.case-card').forEach(card => {
+  const ctaBtn = card.querySelector('.case-cta-btn');
+  if (ctaBtn) {
+    ctaBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const caseId = card.getAttribute('data-case');
+      if (caseId) {
+        openCaseModal(caseId);
+      }
+    });
+  }
+});
+
+// Close button click
+modalCloseBtn.addEventListener('click', closeCaseModal);
+
+// Slider prev/next nav buttons
+galleryPrevBtn.addEventListener('click', () => showSlide(currentSlideIdx - 1));
+galleryNextBtn.addEventListener('click', () => showSlide(currentSlideIdx + 1));
+
+// Close on backdrop click (clicking outside the brief and active controls)
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    closeCaseModal();
+  }
+});
+
+// ESC key to close modal
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('active')) {
+    closeCaseModal();
+  }
+});
+

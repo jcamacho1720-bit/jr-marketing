@@ -296,7 +296,7 @@
 
       <div class="cases-grid reveal">
         <!-- Tarjeta Izquierda (Foro Mundial de Datos) -->
-        <div class="case-card case-tall">
+        <div class="case-card case-tall" data-case="foro">
           <div class="case-bg" style="background-image: url('assets/evento-refest.png')"></div>
           <div class="case-content">
             <div class="case-text">
@@ -314,7 +314,7 @@
         <!-- Columna Derecha (2 Tarjetas Horizontales) -->
         <div class="cases-right-col">
           <!-- Tarjeta Superior: Rueda Electrica Fest -->
-          <div class="case-card case-horizontal">
+          <div class="case-card case-horizontal" data-case="rueda">
             <div class="case-bg" style="background-image: url('assets/stand-promocional.png')"></div>
             <div class="case-content">
               <div class="case-text">
@@ -329,7 +329,7 @@
           </div>
 
           <!-- Tarjeta Inferior: Noches de Fiesta -->
-          <div class="case-card case-horizontal">
+          <div class="case-card case-horizontal" data-case="fiesta">
             <div class="case-bg" style="background-image: url('assets/noches_de_fiesta_case.png')"></div>
             <div class="case-content">
               <div class="case-text">
@@ -543,6 +543,28 @@
       </div>
     </div>
   </footer>
+
+  <!-- CASE STUDY DETAILS MODAL -->
+  <div class="case-modal" id="caseModal">
+    <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar modal">&times;</button>
+    <div class="modal-content">
+      <div class="modal-gallery-pane">
+        <div class="gallery-slider" id="modalSlider">
+          <!-- Dynamic images will load here -->
+        </div>
+        <button class="gallery-nav-btn prev" id="galleryPrevBtn" aria-label="Anterior foto">&#10094;</button>
+        <button class="gallery-nav-btn next" id="galleryNextBtn" aria-label="Siguiente foto">&#10095;</button>
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+      <div class="modal-brief-pane">
+        <span class="brief-category" id="briefCategory">EXPERIENCIA / PRODUCCIÓN</span>
+        <h2 class="brief-title" id="briefTitle">Foro Mundial de Datos</h2>
+        <div class="brief-body" id="briefBody">
+          <!-- Dynamic text will load here -->
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>
