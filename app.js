@@ -145,9 +145,12 @@ const caseStudiesData = {
     category: "EXPERIENCIA / PRODUCCIÓN",
     title: "Foro Mundial de Datos",
     images: [
-      "assets/evento-refest.png",
-      "assets/stand-promocional.png",
-      "assets/equipo-somos.png"
+      "Foto de dato/FOTO TODOS FORO .jpg.jpeg",
+      "Foto de dato/19.png",
+      "Foto de dato/4.2.png",
+      "Foto de dato/7.2.png",
+      "Foto de dato/DSC_4697.JPG.jpeg",
+      "Foto de dato/_DSC1365.JPG.jpeg"
     ],
     brief: `
       <h4>El Desafío</h4>
@@ -168,9 +171,11 @@ const caseStudiesData = {
     category: "CREATIVIDAD / ACTIVACIÓN",
     title: "Rueda Electrica Fest",
     images: [
-      "assets/stand-promocional.png",
-      "assets/evento-refest.png",
-      "assets/equipo-somos.png"
+      "RUEDAFEST/1 (1).jpg.jpeg",
+      "RUEDAFEST/DSC04016.jpg.jpeg",
+      "RUEDAFEST/DSC04152.jpg.jpeg",
+      "RUEDAFEST/DSC04257.jpg.jpeg",
+      "RUEDAFEST/DSC05032.jpg.jpeg"
     ],
     brief: `
       <h4>El Desafío</h4>
@@ -191,9 +196,11 @@ const caseStudiesData = {
     category: "MARKETING EXPERIENCIAL",
     title: "Noches de Fiesta",
     images: [
-      "assets/noches_de_fiesta_case.png",
-      "assets/evento-refest.png",
-      "assets/stand-promocional.png"
+      "Noche de fiesta/PHOTO-2026-03-14-15-31-00.jpg.jpeg",
+      "Noche de fiesta/PHOTO-2026-06-13-10-55-59.jpg.jpeg",
+      "Noche de fiesta/PHOTO-2026-06-13-18-01-42.jpg.jpeg",
+      "Noche de fiesta/PHOTO-2026-06-13-18-09-59.jpg.jpeg",
+      "Noche de fiesta/PHOTO-2026-06-13-18-28-29.jpg.jpeg"
     ],
     brief: `
       <h4>El Desafío</h4>
