@@ -290,26 +290,41 @@ function closeCaseModal() {
   document.body.classList.remove('modal-open');
 }
 
-// Add click event listeners to the entire case card
-document.querySelectorAll('.case-card').forEach(card => {
-  card.addEventListener('click', function(e) {
+// Add click event listeners via delegation
+document.addEventListener('click', function(e) {
+  // 1. Click on Case Card
+  const card = e.target.closest('.case-card');
+  if (card) {
     e.preventDefault();
-    const caseId = this.getAttribute('data-case');
+    const caseId = card.getAttribute('data-case');
     if (caseId) {
       openCaseModal(caseId);
     }
-  });
-});
+    return;
+  }
 
-// Close button click
-modalCloseBtn.addEventListener('click', closeCaseModal);
+  // 2. Click on Close Button
+  if (e.target.closest('#modalCloseBtn')) {
+    e.preventDefault();
+    closeCaseModal();
+    return;
+  }
 
-// Slider prev/next nav buttons
-galleryPrevBtn.addEventListener('click', () => showSlide(currentSlideIdx - 1));
-galleryNextBtn.addEventListener('click', () => showSlide(currentSlideIdx + 1));
+  // 3. Click on Gallery Prev Button
+  if (e.target.closest('#galleryPrevBtn')) {
+    e.preventDefault();
+    showSlide(currentSlideIdx - 1);
+    return;
+  }
 
-// Close on backdrop click (clicking outside the brief and active controls)
-modal.addEventListener('click', (e) => {
+  // 4. Click on Gallery Next Button
+  if (e.target.closest('#galleryNextBtn')) {
+    e.preventDefault();
+    showSlide(currentSlideIdx + 1);
+    return;
+  }
+
+  // 5. Click on Backdrop (outside the modal box content)
   if (e.target === modal) {
     closeCaseModal();
   }
