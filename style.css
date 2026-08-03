@@ -1006,7 +1006,7 @@ section {
 
 /* TRUSTED */
 .trusted {
-  background: #ffffff;
+  background: #f7e7f8;
   padding: 100px 0;
   text-align: center;
 }
@@ -1331,7 +1331,7 @@ section {
 }
 
 #cobertura {
-  background: #f7e7f8;
+  background: #ffffff;
   padding: 20px 0;
 }
 
