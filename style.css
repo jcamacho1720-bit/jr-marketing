@@ -212,16 +212,24 @@ nav {
 
 /* Logo image (real file) */
 .logo-img {
-  height: 38px;
+  height: 28px;
   width: auto;
   display: block;
   object-fit: contain;
+  background: transparent;
 }
 
 /* Footer version — invert negro→blanco sobre fondo oscuro */
 .logo-img-white {
   filter: invert(1) brightness(2);
-  height: 40px;
+  height: 24px;
+  background: transparent;
+}
+
+/* Ensure logo containers have no background */
+.logo,
+.footer-logo {
+  background: transparent;
 }
 
 .logo .dot-play {
