@@ -538,7 +538,7 @@ nav {
 
 /* SECTION generic */
 section {
-  padding: 110px 0;
+  padding: 50px 0;
 }
 
 .section-head {
@@ -756,7 +756,7 @@ section {
 }
 
 .back-desc {
-  font-size: 13.5px;
+  font-size: 14.5px;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.45;
   margin: 0 0 16px 0;
@@ -905,14 +905,14 @@ section {
 }
 
 .mini-card h4 {
-  font-size: 11.5px;
+  font-size: 12.5px;
   font-weight: 700;
   margin: 0 0 2px 0;
   color: var(--white);
 }
 
 .mini-card p {
-  font-size: 9.5px;
+  font-size: 10.5px;
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.35;
   margin: 0;
@@ -1007,7 +1007,7 @@ section {
 /* TRUSTED */
 .trusted {
   background: #f7e7f8;
-  padding: 100px 0;
+  padding: 50px 0;
   text-align: center;
 }
 
@@ -1332,7 +1332,7 @@ section {
 
 #cobertura {
   background: #ffffff;
-  padding: 20px 0;
+  padding: 50px 0;
 }
 
 /* MAP */
@@ -1801,7 +1801,7 @@ section {
 /* RESPONSIVE CONTACT */
 @media (max-width: 900px) {
   .contacto {
-    padding: 60px 0;
+    padding: 50px 0;
   }
 
   .contact-card {
