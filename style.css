@@ -615,6 +615,11 @@ body.menu-open {
   top: 24%;
 }
 
+/* Mobile Scroll Hint - Hidden on Desktop */
+.mobile-scroll-hint {
+  display: none !important;
+}
+
 @media (max-width: 900px) {
   .somos-text {
     width: 90%;
@@ -641,7 +646,7 @@ body.menu-open {
   }
 
   .hero-text {
-    top: 4%;
+    top: 10%;
   }
 
   .hero-text h1 {
@@ -669,8 +674,55 @@ body.menu-open {
   }
 
   .badge-2 {
-    top: 38%;
+    top: 42%;
     right: 6%;
+  }
+
+  /* Mobile Scroll Hint - Visible on Mobile */
+  .mobile-scroll-hint {
+    display: flex !important;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    z-index: 20;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .mobile-scroll-hint .hint-text {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background-image: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .mobile-scroll-hint .hint-arrow {
+    font-size: 20px;
+    font-weight: 900;
+    background-image: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: mobile-scroll-bounce 1.4s infinite ease-in-out;
+  }
+
+  @keyframes mobile-scroll-bounce {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 0.85;
+    }
+    50% {
+      transform: translateY(6px);
+      opacity: 1;
+    }
   }
 
   .c1 {

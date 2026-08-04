@@ -167,6 +167,11 @@ function update() {
 
   const badges = document.querySelectorAll('.float-badge');
   badges.forEach(b => { b.style.opacity = 1 - heroFade; });
+
+  const scrollHint = document.getElementById('mobileScrollHint');
+  if (scrollHint) {
+    scrollHint.style.opacity = 1 - heroFade;
+  }
 }
 
 function onScroll() {
