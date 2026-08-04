@@ -641,7 +641,12 @@ body.menu-open {
   }
 
   .hero-text {
-    top: 6%;
+    top: 4%;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(38px, 11vw, 55px);
+    line-height: 1.05;
   }
 
   .card {
@@ -661,6 +666,11 @@ body.menu-open {
   .float-badge {
     font-size: 11px;
     padding: 6px 12px;
+  }
+
+  .badge-2 {
+    top: 38%;
+    right: 6%;
   }
 
   .c1 {
@@ -2476,7 +2486,7 @@ body.modal-open {
   }
 
   .hero-text h1 {
-    font-size: clamp(32px, 8vw, 44px);
+    font-size: clamp(38px, 11vw, 55px);
   }
 
   .somos-text {
