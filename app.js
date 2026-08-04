@@ -64,45 +64,91 @@ function update() {
   progress = Math.min(1, Math.max(0, progress));
 
   const stageWidth = stage.offsetWidth;
-  const isMobile = stageWidth < 760;
-  const respFactor = isMobile ? 0.45 : 1;
-  const rightOffset = isMobile ? 0 : stageWidth * 0.26;
+  const isMobile = stageWidth < 768;
 
   cards.forEach((card, i) => {
     const c = i - mid;
 
-    const Ax = heroX[i] * respFactor;
-    const Ay = heroY[i] * respFactor;
-    const Arot = heroRot[i];
-    const Asc = 1;
+    if (isMobile) {
+      // EN MÓVIL:
+      // Fase 1 (0 -> 0.40): las tarjetas van de su posición A inicial a apilarse en el mazo B en el centro
+      // Fase 2 (0.40 -> 0.75): las tarjetas se quedan en el mazo B y se desvanecen (opacity 1 -> 0) sin desarmarse a la derecha
+      // Fase 3 (> 0.75): totalmente desvanecidas (opacity = 0)
+      const mobHeroX = [-130, -45, 45, 130];
+      const mobHeroY = [70, 55, 65, 80];
+      const Ax = mobHeroX[i];
+      const Ay = mobHeroY[i];
+      const Arot = heroRot[i];
 
-    // Estado B: se agrupan en el centro
-    const Bx = c * 4;
-    const By = c * 3;
-    const Brot = c * 2.4;
-    const Bsc = 0.8;
+      const Bx = c * 3;
+      const By = c * 2;
+      const Brot = c * 2;
+      const Bsc = 0.68;
 
-    // Estado C: se abren a la derecha de forma asimétrica y esparcida
-    const Cx = isMobile ? c * 8 : somosX[i] * respFactor;
-    const Cy = isMobile ? 80 + c * 35 : somosY[i] * respFactor;
-    const Crot = isMobile ? c * 4 : somosRot[i];
-    const Csc = isMobile ? 0.42 : somosScale[i] * respFactor;
+      let x, y, rot, sc, cardOpacity = 1;
+      if (progress < 0.40) {
+        const t = progress / 0.40;
+        x = lerp(Ax, Bx, t);
+        y = lerp(Ay, By, t);
+        rot = lerp(Arot, Brot, t);
+        sc = lerp(0.75, Bsc, t);
+        cardOpacity = 1;
+      } else if (progress < 0.75) {
+        const t = (progress - 0.40) / 0.35;
+        x = Bx;
+        y = By + lerp(0, 18, t);
+        rot = Brot;
+        sc = lerp(Bsc, Bsc * 0.7, t);
+        cardOpacity = lerp(1, 0, t);
+      } else {
+        x = Bx;
+        y = By + 18;
+        rot = Brot;
+        sc = Bsc * 0.7;
+        cardOpacity = 0;
+      }
 
-    let x, y, rot, sc;
-    if (progress < 0.45) {
-      const t = progress / 0.45;
-      x = lerp(Ax, Bx, t);
-      y = lerp(Ay, By, t);
-      rot = lerp(Arot, Brot, t);
-      sc = lerp(Asc, Bsc, t);
+      card.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${sc})`;
+      card.style.opacity = cardOpacity;
+      card.style.pointerEvents = cardOpacity < 0.1 ? 'none' : 'auto';
     } else {
-      const t = (progress - 0.45) / 0.55;
-      x = lerp(Bx, Cx, t);
-      y = lerp(By, Cy, t);
-      rot = lerp(Brot, Crot, t);
-      sc = lerp(Bsc, Csc, t);
+      // EN DESKTOP (Inalterado):
+      card.style.opacity = 1;
+      card.style.pointerEvents = 'auto';
+
+      const Ax = heroX[i];
+      const Ay = heroY[i];
+      const Arot = heroRot[i];
+      const Asc = 1;
+
+      // Estado B: se agrupan en el centro
+      const Bx = c * 4;
+      const By = c * 3;
+      const Brot = c * 2.4;
+      const Bsc = 0.8;
+
+      // Estado C: se abren a la derecha de forma asimétrica y esparcida
+      const Cx = somosX[i];
+      const Cy = somosY[i];
+      const Crot = somosRot[i];
+      const Csc = somosScale[i];
+
+      let x, y, rot, sc;
+      if (progress < 0.45) {
+        const t = progress / 0.45;
+        x = lerp(Ax, Bx, t);
+        y = lerp(Ay, By, t);
+        rot = lerp(Arot, Brot, t);
+        sc = lerp(Asc, Bsc, t);
+      } else {
+        const t = (progress - 0.45) / 0.55;
+        x = lerp(Bx, Cx, t);
+        y = lerp(By, Cy, t);
+        rot = lerp(Brot, Crot, t);
+        sc = lerp(Bsc, Csc, t);
+      }
+      card.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${sc})`;
     }
-    card.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${sc})`;
   });
 
   const heroFade = Math.min(1, progress / 0.28);
@@ -110,9 +156,13 @@ function update() {
   heroText.style.transform = `translate(-50%, ${lerp(0, -30, heroFade)}px)`;
   heroText.style.pointerEvents = heroFade > 0.95 ? 'none' : 'auto';
 
-  let somosFade = progress > 0.55 ? Math.min(1, (progress - 0.55) / 0.3) : 0;
+  let somosFade = progress > 0.45 ? Math.min(1, (progress - 0.45) / 0.35) : 0;
   somosText.style.opacity = somosFade;
-  somosText.style.transform = `translateY(calc(-50% + ${lerp(24, 0, somosFade)}px))`;
+  if (isMobile) {
+    somosText.style.transform = `translate(-50%, calc(-50% + ${lerp(24, 0, somosFade)}px))`;
+  } else {
+    somosText.style.transform = `translateY(calc(-50% + ${lerp(24, 0, somosFade)}px))`;
+  }
   somosText.style.pointerEvents = somosFade > 0.5 ? 'auto' : 'none';
 
   const badges = document.querySelectorAll('.float-badge');
@@ -125,6 +175,27 @@ function onScroll() {
 window.addEventListener('scroll', onScroll, { passive: true });
 window.addEventListener('resize', onScroll);
 update();
+
+// ---- Mobile Menu Toggle ----
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+
+if (mobileMenuBtn && navLinks) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+  });
+
+  // Close menu when clicking any nav link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenuBtn.classList.remove('active');
+      navLinks.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    });
+  });
+}
 
 // Toggle flipped class on mobile tap for interactive cards
 document.querySelectorAll('.service-card-container').forEach(card => {

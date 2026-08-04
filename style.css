@@ -293,9 +293,86 @@ nav {
   gap: 18px;
 }
 
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 34px;
+  height: 28px;
+  z-index: 1001;
+}
+
+.mobile-menu-btn .bar {
+  width: 100%;
+  height: 2.5px;
+  background: var(--ink);
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.mobile-menu-btn.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-btn.active .bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobile-menu-btn.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
 @media (max-width: 880px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+
   .nav-links {
-    display: none;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition: opacity 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .nav-cta .btn {
+    padding: 10px 18px;
+    font-size: 13.5px;
   }
 }
 
@@ -530,13 +607,27 @@ nav {
 
 @media (max-width: 900px) {
   .somos-text {
-    width: 100%;
-    max-width: none;
-    left: 0;
-    top: auto;
-    bottom: 4%;
-    text-align: left;
-    padding-right: 8px;
+    width: 90%;
+    max-width: 460px;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .somos-text .eyebrow {
+    justify-content: center;
+  }
+
+  .somos-text h2 {
+    font-size: clamp(22px, 5.2vw, 32px);
+    line-height: 1.2;
+  }
+
+  .somos-text p.support {
+    font-size: 14.5px;
+    margin-top: 12px;
   }
 
   .hero-text {
@@ -2357,5 +2448,69 @@ body.modal-open {
 
   .gallery-nav-btn.next {
     right: 16px;
+  }
+}
+
+/* ==========================================================================
+   EXTRA MOBILE POLISH & SMALL SCREENS (< 580px)
+   ========================================================================== */
+@media (max-width: 580px) {
+  .wrap {
+    padding: 0 20px;
+  }
+
+  nav {
+    padding: 0 20px;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(32px, 8vw, 44px);
+  }
+
+  .somos-text {
+    width: 92%;
+    padding: 0 10px;
+  }
+
+  .somos-text h2 {
+    font-size: 22px;
+  }
+
+  .somos-text p.support {
+    font-size: 13.5px;
+  }
+
+  .map-stats {
+    gap: 20px;
+  }
+
+  .stat-num {
+    font-size: 24px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  .stat-item:not(:last-child)::after {
+    right: -10px;
+  }
+
+  .servicios-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .service-card {
+    padding: 24px;
+  }
+
+  .service-card h3 {
+    font-size: 22px;
+    margin-top: 40px;
+  }
+
+  .service-card-back {
+    padding: 24px;
   }
 }
