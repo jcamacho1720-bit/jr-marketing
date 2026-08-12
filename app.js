@@ -204,7 +204,7 @@ if (mobileMenuBtn && navLinks) {
 
 // Toggle flipped class on mobile tap for interactive cards
 document.querySelectorAll('.service-card-container').forEach(card => {
-  card.addEventListener('click', function(e) {
+  card.addEventListener('click', function (e) {
     if (window.innerWidth <= 820) {
       // If clicking the CTA or a link, don't toggle flip
       if (e.target.closest('.back-cta-pill') || e.target.closest('a')) {
@@ -316,7 +316,7 @@ const caseStudiesData = {
       <p>El evento reunió a líderes de la industria e integró contenidos, tecnología y elementos disruptivos para fortalecer el posicionamiento de CCL como referente en transformación digital del sector logístico.</p>
       <hr>
       <h4>Prensa & Medios</h4>
-      <p>📰 <strong>Noticia destacada por P&M:</strong><br>
+      <p><strong>Noticia destacada por P&M:</strong><br>
       <a href="https://www.revistapym.com.co/articulos/comunicacion/70040/ccl-y-jr-marketing-se-unen-para-crear-el-panel-de-colaboracion-digital-en-logistica" target="_blank" rel="noopener noreferrer" style="color: var(--pink); text-decoration: underline; font-weight: 600;">Ver artículo en Revista P&M →</a></p>
     `
   },
@@ -418,7 +418,7 @@ function showSlide(index) {
   if (totalSlides === 0) return;
   currentSlideIdx = (index + totalSlides) % totalSlides;
   modalSlider.style.transform = `translateX(-${currentSlideIdx * 100}%)`;
-  
+
   // Update active dot
   const dots = galleryDotsContainer.querySelectorAll('.gallery-dot');
   dots.forEach((dot, idx) => {
@@ -448,7 +448,7 @@ function openCaseModal(caseId) {
     // Build slide div
     const slide = document.createElement('div');
     slide.className = 'gallery-slide';
-    
+
     const img = document.createElement('img');
     img.src = imgSrc;
     img.alt = `${data.title} Slide ${idx + 1}`;
@@ -478,9 +478,9 @@ function closeCaseModal() {
 }
 
 // ---- Attach click handlers directly to each case card ----
-document.querySelectorAll('.case-card[data-case]').forEach(function(card) {
+document.querySelectorAll('.case-card[data-case]').forEach(function (card) {
   card.style.cursor = 'pointer';
-  card.addEventListener('click', function(e) {
+  card.addEventListener('click', function (e) {
     // If it's the Ver Caso anchor, prevent default scroll-to-top
     e.preventDefault();
     openCaseModal(card.getAttribute('data-case'));
@@ -488,30 +488,30 @@ document.querySelectorAll('.case-card[data-case]').forEach(function(card) {
 });
 
 // Close button
-document.getElementById('modalCloseBtn').addEventListener('click', function(e) {
+document.getElementById('modalCloseBtn').addEventListener('click', function (e) {
   e.preventDefault();
   closeCaseModal();
 });
 
 // Prev / Next slide buttons
-document.getElementById('galleryPrevBtn').addEventListener('click', function(e) {
+document.getElementById('galleryPrevBtn').addEventListener('click', function (e) {
   e.preventDefault();
   showSlide(currentSlideIdx - 1);
 });
-document.getElementById('galleryNextBtn').addEventListener('click', function(e) {
+document.getElementById('galleryNextBtn').addEventListener('click', function (e) {
   e.preventDefault();
   showSlide(currentSlideIdx + 1);
 });
 
 // Click on the dark backdrop (the modal overlay itself, not the content box)
-modal.addEventListener('click', function(e) {
+modal.addEventListener('click', function (e) {
   if (e.target === modal) {
     closeCaseModal();
   }
 });
 
 // ESC key
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && modal.classList.contains('active')) {
     closeCaseModal();
   }
@@ -522,22 +522,22 @@ const jrVideo = document.getElementById('jrVideo');
 const videoOverlay = document.getElementById('videoOverlay');
 
 if (jrVideo && videoOverlay) {
-  videoOverlay.addEventListener('click', function() {
+  videoOverlay.addEventListener('click', function () {
     jrVideo.play();
     videoOverlay.classList.add('is-playing');
   });
 
-  jrVideo.addEventListener('pause', function() {
+  jrVideo.addEventListener('pause', function () {
     if (!jrVideo.seeking && jrVideo.currentTime < jrVideo.duration) {
       videoOverlay.classList.remove('is-playing');
     }
   });
 
-  jrVideo.addEventListener('ended', function() {
+  jrVideo.addEventListener('ended', function () {
     videoOverlay.classList.remove('is-playing');
   });
 
-  jrVideo.addEventListener('play', function() {
+  jrVideo.addEventListener('play', function () {
     videoOverlay.classList.add('is-playing');
   });
 }
@@ -548,7 +548,7 @@ const submitBtn = document.getElementById('submitBtn');
 const formStatusMsg = document.getElementById('formStatusMsg');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
+  contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
     if (submitBtn) {
@@ -570,28 +570,28 @@ if (contactForm) {
         'Accept': 'application/json'
       }
     })
-    .then(response => response.json())
-    .then(data => {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerText = 'Enviar Mensaje';
-      }
-      if (formStatusMsg) {
-        formStatusMsg.classList.add('form-status-success');
-        formStatusMsg.innerText = '¡Mensaje enviado con éxito! Te responderemos a la brevedad en menos de 24 horas.';
-        formStatusMsg.style.display = 'block';
-      }
-      contactForm.reset();
-    })
-    .catch(error => {
-      console.error('Error al enviar formulario:', error);
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerText = 'Enviar Mensaje';
-      }
-      // Fallback: submit standard form if AJAX fails
-      contactForm.submit();
-    });
+      .then(response => response.json())
+      .then(data => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerText = 'Enviar Mensaje';
+        }
+        if (formStatusMsg) {
+          formStatusMsg.classList.add('form-status-success');
+          formStatusMsg.innerText = '¡Mensaje enviado con éxito! Te responderemos a la brevedad en menos de 24 horas.';
+          formStatusMsg.style.display = 'block';
+        }
+        contactForm.reset();
+      })
+      .catch(error => {
+        console.error('Error al enviar formulario:', error);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerText = 'Enviar Mensaje';
+        }
+        // Fallback: submit standard form if AJAX fails
+        contactForm.submit();
+      });
   });
 }
 
@@ -600,7 +600,7 @@ const toggleMoreProjectsBtn = document.getElementById('toggleMoreProjectsBtn');
 const moreCasesWrapper = document.getElementById('moreCasesWrapper');
 
 if (toggleMoreProjectsBtn && moreCasesWrapper) {
-  toggleMoreProjectsBtn.addEventListener('click', function() {
+  toggleMoreProjectsBtn.addEventListener('click', function () {
     const isExpanded = moreCasesWrapper.style.display !== 'none';
     if (isExpanded) {
       moreCasesWrapper.style.display = 'none';
