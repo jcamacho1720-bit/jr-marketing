@@ -1334,6 +1334,11 @@ section {
   margin: 0 auto;
 }
 
+.banner-header .eyebrow {
+  margin-top: 32px;
+  justify-content: flex-start;
+}
+
 /* Portfolio Cases Grid */
 .cases-grid {
   display: grid;
@@ -1595,7 +1600,7 @@ section {
 }
 
 .case-extended {
-  height: 240px;
+  height: 270px;
   position: relative;
   overflow: hidden;
   border-radius: 24px;
@@ -1621,7 +1626,16 @@ section {
 }
 
 .case-extended .case-content {
-  max-width: 60%;
+  max-width: 62%;
+  padding: 30px 34px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.case-extended .case-cta-btn {
+  margin-top: auto;
 }
 
 .case-client-tag {
