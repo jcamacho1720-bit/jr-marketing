@@ -218,7 +218,7 @@ document.querySelectorAll('.service-card-container').forEach(card => {
 // ---- PORTFOLIO CASE STUDY DETAILS MODAL ----
 const caseStudiesData = {
   foro: {
-    category: "FERIA / CONGRESO",
+    category: "DANE Y NACIONES UNIDAS",
     title: "Foro Mundial de Datos",
     images: [
       "Foto de dato/FOTO TODOS FORO .jpg.jpeg",
@@ -230,19 +230,19 @@ const caseStudiesData = {
     ],
     brief: `
       <h4>Sobre el Proyecto</h4>
-      <p>Este evento de carácter internacional reunió a líderes gubernamentales, organizaciones multilaterales, empresas, academia y expertos de diferentes países para debatir el papel de los datos en la construcción de políticas públicas, el desarrollo sostenible y la innovación.</p>
+      <p>JR Marketing estuvo a cargo de la <strong>producción integral del Foro Mundial de Datos de las Naciones Unidas</strong>, realizado por primera vez en Latinoamérica, en Medellín.</p>
       <hr>
-      <h4>Nuestra Gestión</h4>
-      <p>Nuestra gestión abarcó la <strong>producción integral del evento</strong>, coordinando la experiencia de asistentes, conferencistas y aliados estratégicos, garantizando una ejecución impecable bajo estándares internacionales y consolidando un espacio de alto impacto para el intercambio de conocimiento y la cooperación global.</p>
+      <h4>Nuestra Gestión & Impacto</h4>
+      <p>Creamos y ejecutamos una experiencia de alto impacto que conectó a más de <strong>3.500 participantes de 120 países</strong> alrededor de la innovación, la tecnología y el desarrollo sostenible.</p>
       <hr>
       <h4>Escala del Evento</h4>
       <ul>
         <li>Evento de talla mundial para más de <strong>3.500 personas</strong>.</li>
-        <li>Más de <strong>100 nacionalidades</strong> presentes.</li>
-        <li>Líderes gubernamentales, multilaterales, empresas y academia.</li>
+        <li>Más de <strong>120 países y 100 nacionalidades</strong> representadas.</li>
+        <li>Conexión entre líderes gubernamentales, multilaterales, empresas y academia.</li>
       </ul>
       <hr>
-      <p><strong>📅 Fecha:</strong> 12 al 15 de noviembre de 2024</p>
+      <p><strong>📍 Ubicación:</strong> Medellín, Colombia</p>
     `
   },
   rueda: {
@@ -257,23 +257,20 @@ const caseStudiesData = {
     ],
     brief: `
       <h4>Sobre el Proyecto</h4>
-      <p>Desarrollamos el <strong>primer festival de movilidad eléctrica de Colombia</strong>, realizado en el Centro Comercial Unicentro. El evento reunió a más de 20 marcas líderes del sector en un espacio diseñado para impulsar la innovación, la sostenibilidad y la generación de oportunidades comerciales.</p>
+      <p>Desarrollamos el <strong>primer festival de movilidad eléctrica de Colombia</strong>, realizado en el Centro Comercial Unicentro. El evento reunió a más de 20 marcas líderes del sector para impulsar la innovación y la sostenibilidad.</p>
       <hr>
       <h4>La Experiencia</h4>
-      <p>La experiencia integró:</p>
       <ul>
-        <li>Un <strong>showroom de exhibición y ventas</strong> con más de 20 marcas del sector.</li>
-        <li>Un <strong>videopodcast</strong> con invitados y expertos para generar contenido de valor.</li>
-        <li>Entretenimiento de alto impacto con <strong>5 artistas reconocidos</strong> de la escena musical.</li>
+        <li>Showroom de exhibición y ventas con más de 20 marcas.</li>
+        <li>Videopodcast con invitados y expertos para generar contenido de valor.</li>
+        <li>Entretenimiento de alto impacto con 5 artistas reconocidos.</li>
       </ul>
       <hr>
-      <p>El festival logró atraer público masivo, fortalecer el posicionamiento de las marcas participantes y generar una experiencia memorable para los asistentes.</p>
-      <hr>
-      <p><strong>📅 Fecha:</strong> 7 al 10 de mayo de 2026</p>
+      <p><strong>📍 Ubicación:</strong> Bogotá, Colombia</p>
     `
   },
   fiesta: {
-    category: "ACTIVACIÓN BTL",
+    category: "JUMBO / CENCOSUD",
     title: "Noches de Fiesta",
     images: [
       "Noche de fiesta/PHOTO-2026-03-14-15-31-00.jpg.jpeg",
@@ -284,24 +281,90 @@ const caseStudiesData = {
     ],
     brief: `
       <h4>Sobre el Proyecto</h4>
-      <p>Aliados estratégicos de <strong>Jumbo Cencosud</strong> durante más de un año para el desarrollo de <em>"Noches de Fiesta"</em>, una de las campañas experienciales más representativas de la marca a nivel nacional.</p>
+      <p>JR Marketing ha llevado <strong>Noches de Fiesta</strong> a más de <strong>26 puntos de venta en 13 ciudades</strong> del país.</p>
       <hr>
       <h4>La Experiencia</h4>
-      <p>Diseñamos y operamos una <strong>experiencia inmersiva</strong> que convierte cada tienda en un escenario de celebración, combinando:</p>
-      <ul>
-        <li>Música en vivo con DJ y producción técnica de sonido e iluminación.</li>
-        <li>Dinámicas de participación y entrega de premios.</li>
-        <li>Incentivos de interacción para aumentar el tráfico en tienda.</li>
-      </ul>
+      <p>Una experiencia de marca que integra música, producción técnica, animación, entretenimiento y entrega de premios para conectar al público con Jumbo y sus marcas patrocinadoras de una manera cercana, dinámica y memorable.</p>
       <hr>
-      <h4>Escala Nacional</h4>
+      <h4>Impacto Nacional</h4>
       <ul>
-        <li><strong>26 puntos de venta</strong> en más de <strong>13 ciudades</strong> del país.</li>
-        <li>Activaciones con altos estándares de calidad y consistencia operativa.</li>
-        <li>Conexión emocional profunda entre Jumbo y sus clientes.</li>
+        <li>Cobertura en <strong>26 puntos de venta</strong> y <strong>13 ciudades</strong>.</li>
+        <li>Activaciones BTL masivas con alta participación y premiación.</li>
       </ul>
+    `
+  },
+  ccl: {
+    category: "CCL",
+    title: "Inauguración Clúster más grande de LATAM",
+    images: [
+      "assets/ccl_case.png"
+    ],
+    brief: `
+      <h4>Sobre el Proyecto</h4>
+      <p>JR Marketing conceptualizó y produjo el panel <strong>“Colaboración Digital en Logística”</strong> para CCL, creando una experiencia corporativa innovadora y memorable.</p>
       <hr>
-      <p><strong>📅 Fecha:</strong> 2025 / 2026</p>
+      <h4>Nuestra Gestión</h4>
+      <p>El evento reunió a líderes de la industria e integró contenidos, tecnología y elementos disruptivos para fortalecer el posicionamiento de CCL como referente en transformación digital del sector logístico.</p>
+      <hr>
+      <h4>Prensa & Medios</h4>
+      <p>📰 <strong>Noticia destacada por P&M:</strong><br>
+      <a href="https://www.revistapym.com.co/articulos/comunicacion/70040/ccl-y-jr-marketing-se-unen-para-crear-el-panel-de-colaboracion-digital-en-logistica" target="_blank" rel="noopener noreferrer" style="color: var(--pink); text-decoration: underline; font-weight: 600;">Ver artículo en Revista P&M →</a></p>
+    `
+  },
+  simetrik: {
+    category: "SIMETRIK",
+    title: "Perpetual Evolution Fest",
+    images: [
+      "assets/simetrik_case.png"
+    ],
+    brief: `
+      <h4>Sobre el Proyecto</h4>
+      <p>JR Marketing produjo el <strong>Perpetual Evolution Fest de Simetrik</strong>, una experiencia corporativa de dos días realizada en Ágora Bogotá, que reunió a más de <strong>500 asistentes de diferentes países</strong>.</p>
+      <hr>
+      <h4>Nuestra Gestión</h4>
+      <p>El evento integró conferencistas de talla mundial, innovación, inteligencia artificial y espacios de conexión para fortalecer la cultura organizacional y proyectar el futuro de la compañía.</p>
+      <hr>
+      <h4>Cifras Clave</h4>
+      <ul>
+        <li><strong>+500 asistentes internacionales</strong>.</li>
+        <li>2 días de convención en <strong>Ágora Bogotá</strong>.</li>
+        <li>Conferencistas internacionales y tecnología IA.</li>
+      </ul>
+    `
+  },
+  softserve: {
+    category: "SOFTSERVE",
+    title: "Town Hall & Company Day",
+    images: [
+      "assets/softserve_case.png"
+    ],
+    brief: `
+      <h4>Sobre el Proyecto</h4>
+      <p>JR Marketing produjo los <strong>Town Halls y Company Day de SoftServe</strong> bajo un formato híbrido, conectando de manera simultánea a colaboradores y líderes ubicados en distintos países.</p>
+      <hr>
+      <h4>La Experiencia</h4>
+      <p>La experiencia integró producción audiovisual de alta definición, transmisión en vivo, contenidos corporativos estratégicos y herramientas interactivas para fomentar la participación, fortalecer la cultura organizacional y mantener alineados a sus equipos a nivel global.</p>
+    `
+  },
+  castrol: {
+    category: "CASTROL",
+    title: "Estrategia & Producción Audiovisual RRSS",
+    images: [
+      "assets/castrol_case.png"
+    ],
+    brief: `
+      <h4>Sobre el Proyecto</h4>
+      <p>JR Marketing estuvo a cargo de la <strong>estrategia, administración y producción audiovisual</strong> de las redes sociales de Castrol Colombia.</p>
+      <hr>
+      <h4>Nuestra Gestión</h4>
+      <p>A través de una gestión integral en Facebook e Instagram, fortalecimos la presencia digital de la marca y consolidamos una comunidad de más de <strong>20.500 seguidores</strong>, altamente conectada con el mundo automotor.</p>
+      <hr>
+      <h4>Resultados</h4>
+      <ul>
+        <li>Gestión estratégica integral en Facebook e Instagram.</li>
+        <li>Comunidad consolidada de <strong>+20.500 seguidores activos</strong>.</li>
+        <li>Contenido audiovisual especializado de alto engagement.</li>
+      </ul>
     `
   }
 };
@@ -499,6 +562,27 @@ if (contactForm) {
       // Fallback: submit standard form if AJAX fails
       contactForm.submit();
     });
+  });
+}
+
+// ---- Expandable Projects Toggle ----
+const toggleMoreProjectsBtn = document.getElementById('toggleMoreProjectsBtn');
+const moreCasesWrapper = document.getElementById('moreCasesWrapper');
+
+if (toggleMoreProjectsBtn && moreCasesWrapper) {
+  toggleMoreProjectsBtn.addEventListener('click', function() {
+    const isExpanded = moreCasesWrapper.style.display !== 'none';
+    if (isExpanded) {
+      moreCasesWrapper.style.display = 'none';
+      toggleMoreProjectsBtn.setAttribute('aria-expanded', 'false');
+      toggleMoreProjectsBtn.classList.remove('is-active');
+      toggleMoreProjectsBtn.querySelector('span').innerText = 'Conoce más proyectos';
+    } else {
+      moreCasesWrapper.style.display = 'block';
+      toggleMoreProjectsBtn.setAttribute('aria-expanded', 'true');
+      toggleMoreProjectsBtn.classList.add('is-active');
+      toggleMoreProjectsBtn.querySelector('span').innerText = 'Ver menos proyectos';
+    }
   });
 }
 
