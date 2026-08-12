@@ -297,7 +297,16 @@ const caseStudiesData = {
     category: "CCL",
     title: "Inauguración Clúster más grande de LATAM",
     images: [
-      "assets/ccl_case.png"
+      "CCL/IMG_2568.jpeg",
+      "CCL/IMG_2565.jpeg",
+      "CCL/IMG_2569.jpeg",
+      "CCL/IMG_2573.jpeg",
+      "CCL/IMG_2574.jpeg",
+      "CCL/IMG_2576.jpeg",
+      "CCL/IMG_2578.jpeg",
+      "CCL/IMG_2582.jpeg",
+      "CCL/IMG_2583.jpeg",
+      "CCL/IMG_2592.jpeg"
     ],
     brief: `
       <h4>Sobre el Proyecto</h4>
@@ -315,7 +324,12 @@ const caseStudiesData = {
     category: "SIMETRIK",
     title: "Perpetual Evolution Fest",
     images: [
-      "assets/simetrik_case.png"
+      "SIMETRIK/IMG_6764.jpeg",
+      "SIMETRIK/714BD73F-FE47-412C-9FF3-6DFBD9A2A5F3.JPG",
+      "SIMETRIK/IMG_6752.jpeg",
+      "SIMETRIK/IMG_6767.jpeg",
+      "SIMETRIK/IMG_6769.jpeg",
+      "SIMETRIK/fc82f6ad-e8e3-4924-8ca5-c51dd3263c93.JPG"
     ],
     brief: `
       <h4>Sobre el Proyecto</h4>
@@ -336,7 +350,17 @@ const caseStudiesData = {
     category: "SOFTSERVE",
     title: "Town Hall & Company Day",
     images: [
-      "assets/softserve_case.png"
+      "TOWN HALL/471642095_559399136961674_5284572861736434843_n.jpg",
+      "TOWN HALL/471401031_559399186961669_6387094944194735593_n.jpg",
+      "TOWN HALL/471433718_559399256961662_2293639095918517422_n.jpg",
+      "TOWN HALL/471504426_559398953628359_7586353331792064145_n.jpg",
+      "TOWN HALL/471514310_559398936961694_8380176975290733366_n.jpg",
+      "TOWN HALL/471606443_559399250294996_4107268685845011409_n.jpg",
+      "TOWN HALL/471615434_559398960295025_5948903597505571585_n.jpg",
+      "TOWN HALL/471667686_559399273628327_8953339903235252400_n.jpg",
+      "TOWN HALL/471773145_560400836861504_8410839998588403820_n.jpg",
+      "TOWN HALL/471839225_559398940295027_99955726532970576_n.jpg",
+      "TOWN HALL/471857295_559399016961686_7769462760660103805_n.jpg"
     ],
     brief: `
       <h4>Sobre el Proyecto</h4>
@@ -350,7 +374,13 @@ const caseStudiesData = {
     category: "CASTROL",
     title: "Estrategia & Producción Audiovisual RRSS",
     images: [
-      "assets/castrol_case.png"
+      "CASTROL/IMG_6825.jpeg",
+      "CASTROL/IMG_6866.jpeg",
+      "CASTROL/IMG_6875.jpeg",
+      "CASTROL/IMG_6881.jpeg",
+      "CASTROL/IMG_7458.jpeg",
+      "CASTROL/IMG_7459.jpeg",
+      "CASTROL/IMG_7480.jpeg"
     ],
     brief: `
       <h4>Sobre el Proyecto</h4>
