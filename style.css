@@ -691,8 +691,8 @@ body.menu-open {
   }
 
   .badge-2 {
-    top: 42%;
-    right: 6%;
+    top: 14%;
+    right: 5%;
   }
 
   /* Mobile Scroll Hint - Visible on Mobile */
@@ -1695,6 +1695,49 @@ section {
 
   .case-horizontal .case-content {
     max-width: 100%;
+  }
+
+  /* Extended Cases Grid Responsive Mobile */
+  .cases-grid-extended {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .case-extended {
+    height: auto;
+    min-height: 250px;
+    flex-direction: column;
+  }
+
+  .case-extended .case-bg {
+    width: 100%;
+    height: 52%;
+    bottom: 0;
+    top: auto;
+    right: 0;
+  }
+
+  .case-extended::before {
+    background: linear-gradient(to bottom, #0e0817 0%, #0e0817 42%, rgba(14, 8, 23, 0.75) 75%, rgba(14, 8, 23, 0) 100%);
+  }
+
+  .case-extended .case-content {
+    max-width: 100%;
+    padding: 26px 22px;
+  }
+
+  .case-extended .case-text h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .case-extended .case-text p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .case-extended .case-cta-btn {
+    margin-top: 18px;
   }
 }
 
