@@ -852,11 +852,11 @@ section {
 }
 
 .card-brand {
-  background: linear-gradient(to bottom, rgba(27, 20, 36, 0.45), rgba(27, 20, 36, 0.9)), url('assets/brand experience.jpeg') center/cover no-repeat !important;
+  background: linear-gradient(to bottom, rgba(27, 20, 36, 0.45), rgba(27, 20, 36, 0.9)), url('assets/brand_experience_bg.png') center/cover no-repeat !important;
 }
 
 .card-digital {
-  background: linear-gradient(to bottom, rgba(75, 21, 128, 0.4), rgba(30, 9, 51, 0.95)), url('assets/marketing digital.png') center/cover no-repeat !important;
+  background: linear-gradient(to bottom, rgba(75, 21, 128, 0.4), rgba(30, 9, 51, 0.95)), url('assets/marketing_digital_bg.png') center/cover no-repeat !important;
 }
 
 .service-card-container:nth-child(1) .glyph {
