@@ -449,3 +449,56 @@ if (jrVideo && videoOverlay) {
   });
 }
 
+// ---- Contact Form AJAX Submission (FormSubmit to jose.rey@jrmarketing.co) ----
+const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formStatusMsg = document.getElementById('formStatusMsg');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Enviando...';
+    }
+
+    if (formStatusMsg) {
+      formStatusMsg.style.display = 'none';
+      formStatusMsg.className = 'form-status-msg';
+    }
+
+    const formData = new FormData(contactForm);
+
+    fetch('https://formsubmit.co/ajax/jose.rey@jrmarketing.co', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Enviar Mensaje';
+      }
+      if (formStatusMsg) {
+        formStatusMsg.classList.add('form-status-success');
+        formStatusMsg.innerText = '¡Mensaje enviado con éxito! Te responderemos a la brevedad en menos de 24 horas.';
+        formStatusMsg.style.display = 'block';
+      }
+      contactForm.reset();
+    })
+    .catch(error => {
+      console.error('Error al enviar formulario:', error);
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Enviar Mensaje';
+      }
+      // Fallback: submit standard form if AJAX fails
+      contactForm.submit();
+    });
+  });
+}
+
