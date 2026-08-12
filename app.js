@@ -424,3 +424,28 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+// ---- Corporate Video Overlay & Playback Handler ----
+const jrVideo = document.getElementById('jrVideo');
+const videoOverlay = document.getElementById('videoOverlay');
+
+if (jrVideo && videoOverlay) {
+  videoOverlay.addEventListener('click', function() {
+    jrVideo.play();
+    videoOverlay.classList.add('is-playing');
+  });
+
+  jrVideo.addEventListener('pause', function() {
+    if (!jrVideo.seeking && jrVideo.currentTime < jrVideo.duration) {
+      videoOverlay.classList.remove('is-playing');
+    }
+  });
+
+  jrVideo.addEventListener('ended', function() {
+    videoOverlay.classList.remove('is-playing');
+  });
+
+  jrVideo.addEventListener('play', function() {
+    videoOverlay.classList.add('is-playing');
+  });
+}
+
