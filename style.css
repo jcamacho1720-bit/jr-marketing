@@ -2603,8 +2603,10 @@ body.modal-open {
   text-align: center;
 }
 
-.text-center .eyebrow {
-  justify-content: center;
+.text-center h2 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-sub {
