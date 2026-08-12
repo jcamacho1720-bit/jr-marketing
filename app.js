@@ -43,7 +43,7 @@ const mid = (N - 1) / 2;
 // Nuevas configuraciones para 4 tarjetas de fotos asimétricas
 const heroRot = [-4, 2, -2, 5];
 const heroX = [-380, -130, 130, 380];
-const heroY = [95, 75, 100, 115];
+const heroY = [127, 107, 132, 147];
 
 // Configuraciones finales para el collage en sección Somos
 const somosRot = [-5, 3, -2, 6];
