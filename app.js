@@ -43,7 +43,7 @@ const mid = (N - 1) / 2;
 // Nuevas configuraciones para 4 tarjetas de fotos asimétricas
 const heroRot = [-4, 2, -2, 5];
 const heroX = [-380, -130, 130, 380];
-const heroY = [135, 115, 140, 155];
+const heroY = [95, 75, 100, 115];
 
 // Configuraciones finales para el collage en sección Somos
 const somosRot = [-5, 3, -2, 6];
@@ -75,7 +75,7 @@ function update() {
       // Fase 2 (0.40 -> 0.75): las tarjetas se quedan en el mazo B y se desvanecen (opacity 1 -> 0) sin desarmarse a la derecha
       // Fase 3 (> 0.75): totalmente desvanecidas (opacity = 0)
       const mobHeroX = [-130, -45, 45, 130];
-      const mobHeroY = [70, 55, 65, 80];
+      const mobHeroY = [35, 20, 30, 45];
       const Ax = mobHeroX[i];
       const Ay = mobHeroY[i];
       const Arot = heroRot[i];
@@ -615,4 +615,16 @@ if (toggleMoreProjectsBtn && moreCasesWrapper) {
     }
   });
 }
+
+// ---- Footer Accordions on Mobile ----
+document.querySelectorAll('.accordion-header').forEach(header => {
+  header.addEventListener('click', function () {
+    if (window.innerWidth <= 768) {
+      const parentCol = this.closest('.accordion-col');
+      if (parentCol) {
+        parentCol.classList.toggle('is-open');
+      }
+    }
+  });
+});
 
